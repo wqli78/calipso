@@ -5,7 +5,7 @@
 module.exports = function(app,express) {
 
   // Database connection
-  app.set('db-uri', 'mongodb://localhost/calipso-test');
+  app.set('db-uri', 'mongodb://127.0.0.1/calipso-test');
 
   // Change to suit - this key works for calip.so
   app.set('google-analytics-key', 'UA-17607570-4');
