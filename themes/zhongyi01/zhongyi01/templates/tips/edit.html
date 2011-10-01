@@ -1,0 +1,15 @@
+﻿
+<h1>编辑 Tip <%= tip.name %></h1>
+<%- partial('../messages') %>
+<form method="post" action="/tip/<%= tip.id %>">
+  <input type="hidden" name="_method" value="put" />
+  
+  <% for (var key in myschema){ %>
+	  <p><%= myschema[key]["cn_name"]  %>: <input type="text" name="tip[<%= key%>]" value="<%= tip[key] %>" /></p>
+  <% } %>
+ 
+  <p>
+  	<button class="button-submit" type="submit" value="Update">保存</button>
+  	<a class="button-cancel" href="/tip/<%= tip.id %>">取消</a>
+  </p>
+</form>

@@ -1,0 +1,15 @@
+﻿
+<h1>编辑 Cat <%= cat.name %></h1>
+<%- partial('../messages') %>
+<form method="post" action="/cat/<%= cat.id %>">
+  <input type="hidden" name="_method" value="put" />
+  
+  <% for (var key in myschema){ %>
+	  <p><%= myschema[key]["cn_name"]  %>: <input type="text" name="cat[<%= key%>]" value="<%= cat[key] %>" /></p>
+  <% } %>
+ 
+  <p>
+  	<button class="button-submit" type="submit" value="Update">保存</button>
+  	<a class="button-cancel" href="/cat/<%= cat.id %>">取消</a>
+  </p>
+</form>

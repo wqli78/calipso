@@ -1,0 +1,467 @@
+
+        
+      <div class="pagehead repohead vis-public   emptyrepohead shortdetails instapaper_ignore readability-menu">
+
+      
+   
+
+<%- partial('../sickcases/_title-actions-bar') %>
+<%- partial('../sickcases/_tabs') %>
+  
+
+  
+  
+  
+  
+  
+
+
+
+        
+
+        
+
+      </div><!-- /.pagehead -->
+
+      
+
+
+
+
+
+
+
+
+
+
+
+<!-- base sha1: "8b049a152fb880aebf60ce4800f228e1535939d2" -->
+<!-- head sha1: "d0123a6981ec5f1907f717ac7092120bdd54b66a" -->
+
+<div class="view-pull-request clearfix">
+
+  <div class="pull-head">
+    <span class="number">
+      
+        <a href="https://github.com/rails/rails/issues/2736">#2736</a>
+      
+    </span>
+
+    <span class="state state-open">Open</span>
+
+    <p class="pull-description"><a href="https://github.com/dasch">dasch</a>
+       wants someone to merge
+       14 commits
+       into
+       <span class="commit-ref to"><span class="user">rails</span>:3-1-stable</span>
+       from
+       <span class="commit-ref from"><span class="user">dasch</span>:delegate-deprecation</span></p>
+  </div><!-- /.pull-request-head -->
+
+
+
+  <ul class="js-hard-tabs  smalltabs">
+    <li><a href="https://github.com/rails/rails/pull/2736" class="selected" data-container-id="discussion_bucket">
+      Discussion
+      <span class="icon discussion-icon"></span>
+    </a></li>
+    <li><a href="https://github.com/rails/rails/pull/2736/commits" class="" data-container-id="commits_bucket">
+      Commits
+      <span class="icon commits-icon"></span>
+      <span class="counter">14</span>
+    </a></li>
+    <li><a href="https://github.com/rails/rails/pull/2736/files" class="" data-container-id="files_bucket">
+      Diff
+      <span class="icon fileschanged-icon"></span>
+      <span class="counter">2</span>
+    </a></li>
+  </ul>
+
+  
+    <div id="discussion_bucket" class="tab-content" style="">
+
+  <div class="discussion-stats">
+    
+<span class="state state-open">
+  Open
+</span>
+
+<ul class="changes">
+  <li>
+    <span class="addition">+</span>
+    <strong>129</strong>
+    additions
+  </li>
+
+  <li>
+    <span class="deletion">-</span>
+    <strong>10</strong>
+    deletions
+  </li>
+</ul>
+
+<p><a href="https://github.com/rails/rails/pulls">All Pull Requests</a></p>
+
+  </div>
+
+  <div class="discussion-timeline">
+
+    <div class="new-comments">
+      
+
+<div class="avatar-bubble js-comment-container">
+  <span class="avatar"><img src="/images/posts/post_show/5da4c52f43677f395aff5bde775593c2.jpeg" alt="" height="48" width="48"><span class="overlay size-48"></span></span>
+
+  <div class="bubble">
+    <div class="comment starting-comment " id="issue-1509902">
+      <div class="body">
+        <p class="author"><a href="https://github.com/dasch"><%= post.auther %></a> 创建于 <time class="js-relative-date" datetime="2011-08-29T06:58:28-07:00" title="2011-08-29 06:58:28">August 29, 2011</time></p>
+        <h2 class="content-title"><%= post.title %></h2>
+        
+        <div class="formatted-content">
+          
+          <div class="content-body wikistyle markdown-format">
+            
+<%- post.body %>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div><!-- /.bubble -->
+</div><!-- /.avatar-bubble -->
+
+      <div class="pull-participation">
+        
+          
+            <span class="avatar"><img src="/images/posts/post_show/5da4c52f43677f395aff5bde775593c2.jpeg" alt="" height="24" width="24"><span class="overlay size-24"></span></span>
+          
+            <span class="avatar"><img src="/images/posts/post_show/2940bc7d4506f3e099e3dcc32a412b98.jpeg" alt="" height="24" width="24"><span class="overlay size-24"></span></span>
+          
+            <span class="avatar"><img src="/images/posts/post_show/e837f6b7fd146ab16ed3d663476c063e.png" alt="" height="24" width="24"><span class="overlay size-24"></span></span>
+          
+
+          
+
+          <a href="https://github.com/dasch">dasch</a>, <a href="https://github.com/jonleighton">jonleighton</a>, and <a href="https://github.com/josevalim">josevalim</a>
+          are participating in this pull request.
+        
+      </div>
+
+<% comments.forEach(function(comment){ %>
+
+
+  <div class="avatar-bubble js-comment-container">
+    <span class="avatar"><img src="/images/posts/post_show/5da4c52f43677f395aff5bde775593c2.jpeg" alt="" height="48" width="48"><span class="overlay size-48"></span></span>
+    <div class="bubble">
+      
+<div id="issuecomment-1967775" class="comment normal-comment">
+  <div class="cmeta">
+    <p class="author">
+      
+        <span class="icon"></span>
+      
+      <strong class="author"><a href="/users/<%= comment.created_by %>/show"><%= comment.created_by_login %></a></strong>
+      <em class="action-text">
+        <a href="#issuecomment-1967775">
+
+        </a>
+      </em>
+      
+    </p>
+    <p class="info">
+      <em class="date"><a href="#issuecomment-1967775"><time class="js-relative-date" datetime="2011-09-01T06:01:32-07:00" title="2011-09-01 06:01:32">September 01, 2011</time></a></em>
+      
+    </p>
+  </div>
+
+  
+
+  <div class="body">
+    
+    <div class="formatted-content">
+      <div class="content-body wikistyle markdown-format"><%= comment.body %></div>
+    </div>
+    
+  </div>
+</div>
+
+    </div>
+  </div><!-- /.avatar-bubble -->
+
+
+      
+
+<% }) %>
+    
+        
+  <div class="avatar-bubble js-comment-container">
+    <span class="avatar"><img src="/images/posts/post_show/5da4c52f43677f395aff5bde775593c2.jpeg" alt="" height="48" width="48"><span class="overlay size-48"></span></span>
+    <div class="bubble">
+      
+<div id="issuecomment-1967775" class="comment normal-comment">
+  <div class="cmeta">
+    <p class="author">
+      
+        <span class="icon"></span>
+      
+      <strong class="author"><a href="https://github.com/dasch">dasch</a></strong>
+      <em class="action-text">
+        <a href="#issuecomment-1967775">
+        commented
+        </a>
+      </em>
+      
+    </p>
+    <p class="info">
+      <em class="date"><a href="#issuecomment-1967775"><time class="js-relative-date" datetime="2011-09-01T06:01:32-07:00" title="2011-09-01 06:01:32">September 01, 2011</time></a></em>
+      
+    </p>
+  </div>
+
+  
+
+  <div class="body">
+    
+    <div class="formatted-content">
+      
+      
+      <div class="content-body wikistyle markdown-format"><p>Also, rebased against 3-1-stable.</p></div>
+    </div>
+    
+  </div>
+</div>
+
+    </div>
+  </div><!-- /.avatar-bubble -->
+
+
+      
+        
+  <div class="avatar-bubble js-comment-container">
+    <span class="avatar"><img src="/images/posts/post_show/2940bc7d4506f3e099e3dcc32a412b98.jpeg" alt="" height="48" width="48"><span class="overlay size-48"></span></span>
+    <div class="bubble">
+      
+<div id="issuecomment-2045828" class="comment normal-comment">
+  <div class="cmeta">
+    <p class="author">
+      
+        <span class="icon"></span>
+      
+      <strong class="author"><a href="https://github.com/jonleighton">jonleighton</a></strong>
+      <em class="action-text">
+        <a href="#issuecomment-2045828">
+        commented
+        </a>
+      </em>
+      
+    </p>
+    <p class="info">
+      <em class="date"><a href="#issuecomment-2045828"><time class="js-relative-date" datetime="2011-09-08T15:28:51-07:00" title="2011-09-08 15:28:51">3 days ago</time></a></em>
+      
+    </p>
+  </div>
+
+  
+
+  <div class="body">
+    
+    <div class="formatted-content">
+      
+      
+      <div class="content-body wikistyle markdown-format"><p>Hi <a href="https://github.com/dasch" class="user-mention">@dasch</a>. Thanks for working on this. I have talked to <a href="https://github.com/tenderlove" class="user-mention">@tenderlove</a>
+ and we think it is too late to deprecate this in 3-1-stable. So would 
+you be up for porting this deprecation to master? Then we can make the 
+actual change in 3.2 + 1. Thanks.</p></div>
+    </div>
+    
+  </div>
+</div>
+
+    </div>
+  </div><!-- /.avatar-bubble -->
+
+
+      
+        
+  <div class="avatar-bubble js-comment-container">
+    <span class="avatar"><img src="/images/posts/post_show/5da4c52f43677f395aff5bde775593c2.jpeg" alt="" height="48" width="48"><span class="overlay size-48"></span></span>
+    <div class="bubble">
+      
+<div id="issuecomment-2053457" class="comment normal-comment">
+  <div class="cmeta">
+    <p class="author">
+      
+        <span class="icon"></span>
+      
+      <strong class="author"><a href="https://github.com/dasch">dasch</a></strong>
+      <em class="action-text">
+        <a href="#issuecomment-2053457">
+        commented
+        </a>
+      </em>
+      
+    </p>
+    <p class="info">
+      <em class="date"><a href="#issuecomment-2053457"><time class="js-relative-date" datetime="2011-09-09T10:09:34-07:00" title="2011-09-09 10:09:34">2 days ago</time></a></em>
+      
+    </p>
+  </div>
+
+  
+
+  <div class="body">
+    
+    <div class="formatted-content">
+      
+      
+      <div class="content-body wikistyle email-format"><div class="email-fragment">Hi Jon,
+
+Sure, I'll port it over when I find some time for it.
+
+
+Daniel Schierbeck</div>
+<span class="email-hidden-toggle"><a href="#">Show quoted text</a></span><div class="email-hidden-reply">
+<div class="email-quoted-reply">On Thursday, September 8, 2011 at 3:28 PM, Jon Leighton wrote:
+
+&gt; Hi <a href="https://github.com/dasch" class="user-mention">@dasch</a>. Thanks for working on this. I have talked to <a href="https://github.com/tenderlove" class="user-mention">@tenderlove</a>
+ and we think it is too late to deprecate this in 3-1-stable. So would 
+you be up for porting this deprecation to master? Then we can make the 
+actual change in 3.2 + 1. Thanks.
+&gt;
+&gt; --
+&gt; Reply to this email directly or view it on GitHub:
+&gt; <a href="https://github.com/rails/rails/pull/2736#issuecomment-2045828">https://github.com/rails/rails/pull/2736#issuecomment-2045828</a>
+</div>
+</div></div>
+    </div>
+    
+  </div>
+</div>
+
+    </div>
+  </div><!-- /.avatar-bubble -->
+
+
+      
+
+      
+
+    </div><!-- /.new-comments -->
+
+    
+
+      
+        <div class="merge-pr">
+          
+
+          
+        </div>
+      
+
+      <div class="avatar-bubble">
+        <span class="avatar"><img src="/images/posts/post_show/8c87d21c77922335ad2b2edd150f75ce.png" alt="" height="48" width="48"><span class="overlay size-48"></span></span>
+
+		
+		
+		
+		
+        <form action="/comments/act/create_comment" class="js-new-comment-form" data-remote="true" data-type="json" id="pull_comment_form" method="post">
+		
+		<div style="margin:0;padding:0">
+		<input name="comment[post_id]" value="<%= post.id%>" type="hidden">
+		<input name="sickcase[id]" value="<%= sickcase.id%>" type="hidden">
+		
+		
+		</div>
+          <div class="bubble">
+            <div class="action-bar">
+              
+
+<h3>回复 <a href="http://help.github.com/pull-requests/" target="_blankg"></a></h3>
+
+
+            </div>
+            
+
+<p class="comment-form-error" style="display:none">必须写一些东西</p>
+
+<div class="comment-form previewable-comment-form previewable-comment-form-attached" data-repository="8514">
+  <p class="help">Comments are parsed with <a href="http://github.github.com/github-flavored-markdown/" class="gfm-help" target="_blank">GitHub Flavored Markdown</a></p>
+  <ul class="edit-preview-tabs inline-tabs">
+    <li><a class="selected" href="#write_bucket_382" action="write">写</a></li>
+    <li><a href="#preview_bucket_382" action="preview">预览</a></li>
+  </ul>
+  <div style="display: block;" id="write_bucket_382" class="tab-content">
+    <textarea style="position: absolute; top: 0px; left: -9999px; height: 100px; width: 100%; line-height: 16px; text-decoration: none; letter-spacing: normal;" tabindex="-1" class="js-autosize"></textarea><textarea style="" name="comment[body]" tabindex="1" id="comment_body_382" class="js-autosize"></textarea>
+  </div>
+  <div style="display: none;" id="preview_bucket_382" class="new-comments tab-content">
+    
+<div id="openstruct-119915100" class="comment normal-comment">
+
+
+  
+
+  <div class="body">
+    
+    <div class="formatted-content">
+      
+      
+      <div class="content-body wikistyle "><p>Nothing to preview</p></div>
+    </div>
+    
+  </div>
+</div>
+
+  </div>
+</div>
+
+          </div><!-- /.bubble -->
+          <div class="form-actions">
+            
+
+
+
+
+<button type="submit" class="classy" tabindex="2"><span>提交</span></button>
+
+          </div>
+        </form>
+      </div><!-- /.avatar-bubble -->
+
+      
+
+
+    
+  </div><!-- /.discussion-timeline -->
+
+  
+
+  <div class="rule"></div>
+  <p class="notification-settings js-subscription-settings ignored">
+    Notifications for new comments on this Pull Request are
+
+    <span class="js-subscription-on" style="display: none">
+      <strong>on</strong>.
+      <a href="https://github.com/rails/rails/issues/2736/unsubscribe" class="js-subscription">Disable notifications for this Pull Request</a>
+    </span>
+
+    <span class="js-subscription-off">
+      <strong>off</strong>.
+      <a href="https://github.com/rails/rails/issues/2736/subscribe" class="js-subscription">Enable notifications for this Pull Request</a>
+    </span>
+  </p>
+
+
+
+</div><!-- /#discussion_bucket -->
+
+  
+
+  
+
+  
+  
+</div>
+    

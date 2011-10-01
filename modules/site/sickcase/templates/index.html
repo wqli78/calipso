@@ -1,0 +1,34 @@
+﻿
+<h1>sickcases</h1>
+<%- partial('../messages') %>
+<div style="float: left; width: 60%;">
+	<table class="tabular">
+		<tr>
+			<th>姓名</th>
+		</tr>
+		<% sickcases.forEach(function(sickcase){ %>
+		<tr>
+			<td><a href="/sickcase/<%= sickcase.id %>"><%= sickcase.name %></a></td>
+		</tr>
+		<% }) %>
+		<tfoot>
+			<tr>
+				<td colspan='2'><%- pagerHtml %></td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+<div style="float: left; margin-left: 5%; width: 35%;">
+	<form method="post" action="/sickcases">
+		<input type="hidden" name="_method" value="post" />
+		<p>
+  <% for (var key in myschema){ %>	
+			<%= myschema[key]["cn_name"]  %>: <input type="text" name="sickcase[<%= key%>]" />
+  <% } %>
+
+		</p>
+		<p>
+			<button class="button-submit" type="submit" value="Create">创建</button>
+		</p>
+	</form>
+</div>

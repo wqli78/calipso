@@ -1,0 +1,21 @@
+﻿
+
+<h1>posts</h1>
+<%- partial('../messages') %>
+<div style="float: left; width: 60%;">
+	<table class="tabular">
+		<tr>
+			<th>姓名</th>
+		</tr>
+		<% posts.forEach(function(post){ %>
+		<tr>
+			<td><a href="/post/<%= post.id %>"><%= post.title %></a></td>
+		</tr>
+		<% }) %>
+		<tfoot>
+			<tr>
+				<td colspan='2'><%- pagerHtml %></td>
+			</tr>
+		</tfoot>
+	</table>
+</div>

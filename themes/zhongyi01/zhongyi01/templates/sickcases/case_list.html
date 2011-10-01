@@ -1,0 +1,263 @@
+
+<div class="pagehead">
+
+<%- partial('../_tabs_pjax') %>
+<div class="pjax">
+  
+  <div class="subnav-bar">
+  <ul>
+    <li><a href="https://github.com/languages/ActionScript">统计</a></li>
+    <li><a href="https://github.com/languages/ActionScript">效果最好</a></li>
+    <li><a href="https://github.com/languages/ActionScript/created" class="selected">最新提交</a></li>
+    <li><a href="https://github.com/languages/ActionScript/updated">最近更新</a></li>
+    <li><a href="https://github.com/languages/ActionScript/most_watched">最受关注</a></li>
+  </ul>
+</div>
+
+</div>
+
+</div><!-- /.pagehead -->
+
+
+<div id="directory">
+  <div class="news" style="float:none;">
+    <table class="repo" cellpadding=".3em" cellspacing="0">
+      
+        <tbody>
+		
+		<% sickcases.forEach(function(sickcase){ %>
+	
+<tr>
+  <td class="gravatar" rowspan="2">
+    <img src="/list_files/138b77949f40a2503a39559b51cd9d13.png" alt="" height="36" width="36">
+  </td>
+  <td class="title">
+    <a href="/sickcases/<%= sickcase.id %>/case_show"><%= sickcase.name %></a>
+  </td>
+  <td class="owner">
+    <a href="https://github.com/codeengine"><%= sickcase.created_by_login %></a>
+  </td>
+  <td class="date">
+    
+     <%= sickcase.created_at %>
+    
+  </td>
+  <td rowspan="2" class="graph participation-graph">
+    <canvas class="bars" data-source="/codeengine/minimalcomps/graphs/owner_participation" height="20" width="416"></canvas>
+    <img alt="legend" class="legend" src="/list_files/participation_legend.png">
+  </td>
+</tr>
+<tr>
+  <td colspan="3" class="desc"><%= sickcase.sick_intro %></td>
+</tr>
+<tr class="sep">
+  <td>&nbsp;</td>
+  <td class="border" colspan="4">&nbsp;</td><td>
+</td></tr>
+<tr class="sep">
+  <td colspan="5">&nbsp;</td><td>
+</td></tr>
+
+		<% }) %>	
+   		
+<tr>
+  <td class="gravatar" rowspan="2">
+    <img src="/list_files/138b77949f40a2503a39559b51cd9d13.png" alt="" height="36" width="36">
+  </td>
+  <td class="title">
+    <a href="https://github.com/codeengine/minimalcomps">杨惠洁快快康复吧！</a>
+  </td>
+  <td class="owner">
+    <a href="https://github.com/codeengine">wqli78</a>
+  </td>
+  <td class="date">
+    
+      9月11日 19:56
+    
+  </td>
+  <td rowspan="2" class="graph participation-graph">
+    <canvas class="bars" data-source="/codeengine/minimalcomps/graphs/owner_participation" height="20" width="416"></canvas>
+    <img alt="legend" class="legend" src="/list_files/participation_legend.png">
+  </td>
+</tr>
+<tr>
+  <td colspan="3" class="desc">2008年胶济铁路火车脱轨事故伤员。。。</td>
+</tr>
+<tr class="sep">
+  <td>&nbsp;</td>
+  <td class="border" colspan="4">&nbsp;</td><td>
+</td></tr>
+<tr class="sep">
+  <td colspan="5">&nbsp;</td><td>
+</td></tr>
+
+      
+<tr>
+  <td class="gravatar" rowspan="2">
+    <img src="/list_files/516afdb81facb5673422b37ea6ffc0ad.jpeg" alt="" height="36" width="36">
+  </td>
+  <td class="title">
+    <a href="https://github.com/FIZZERS/ActionScript-DataProvider-Controls">C56损伤</a>
+  </td>
+  <td class="owner">
+    <a href="https://github.com/FIZZERS">苦丁茶</a>
+  </td>
+  <td class="date">
+    
+      8月20日 13:42
+    
+  </td>
+  <td rowspan="2" class="graph participation-graph">
+    <canvas class="bars" data-source="/FIZZERS/ActionScript-DataProvider-Controls/graphs/owner_participation" height="20" width="416"></canvas>
+    <img alt="legend" class="legend" src="/list_files/participation_legend.png">
+  </td>
+</tr>
+<tr>
+  <td colspan="3" class="desc">车祸伤</td>
+</tr>
+<tr class="sep">
+  <td>&nbsp;</td>
+  <td class="border" colspan="4">&nbsp;</td><td>
+</td></tr>
+<tr class="sep">
+  <td colspan="5">&nbsp;</td><td>
+</td></tr>
+
+      
+<tr>
+  <td class="gravatar" rowspan="2">
+    <img src="/list_files/a4c508b82dc4230bd7f38e0cbf0943ab.jpeg" alt="" height="36" width="36">
+  </td>
+  <td class="title">
+    <a href="https://github.com/alecmce/ptolemy3D">截瘫病友栾庭花治疗案例-王天顺医生</a>
+  </td>
+  <td class="owner">
+    <a href="https://github.com/alecmce">admin</a>
+  </td>
+  <td class="date">
+    
+      11 Sep 10:05
+    
+  </td>
+  <td rowspan="2" class="graph participation-graph">
+    <canvas class="bars" data-source="/alecmce/ptolemy3D/graphs/owner_participation" height="20" width="416"></canvas>
+    <img alt="legend" class="legend" src="/list_files/participation_legend.png">
+  </td>
+</tr>
+<tr>
+  <td colspan="3" class="desc">从房上掉下，腰椎损伤！</td>
+</tr>
+<tr class="sep">
+  <td>&nbsp;</td>
+  <td class="border" colspan="4">&nbsp;</td><td>
+</td></tr>
+<tr class="sep">
+  <td colspan="5">&nbsp;</td><td>
+</td></tr>
+
+      
+        <tr>
+  <td class="gravatar" rowspan="2">
+    <img src="/list_files/08751a34535db062184056123528c6f3.jpeg" alt="" height="36" width="36">
+  </td>
+  <td class="title">
+    <a href="https://github.com/GustavoCostaW/robotlegs-framework">山清水秀截瘫4年中医治疗进展案例-王天顺医生</a>
+  </td>
+  <td class="owner">
+    <a href="https://github.com/GustavoCostaW">山清水秀</a>
+  </td>
+  <td class="date">
+    
+      11 Sep 03:23
+    
+  </td>
+  <td rowspan="2" class="graph participation-graph">
+    <canvas class="bars" data-source="/GustavoCostaW/robotlegs-framework/graphs/owner_participation" height="20" width="416"></canvas>
+    <img alt="legend" class="legend" src="/list_files/participation_legend.png">
+  </td>
+</tr>
+<tr>
+  <td colspan="3" class="desc">高空坠落，腰椎损伤！</td>
+</tr>
+<tr class="sep">
+  <td>&nbsp;</td>
+  <td class="border" colspan="4">&nbsp;</td><td>
+</td></tr>
+<tr class="sep">
+  <td colspan="5">&nbsp;</td><td>
+</td></tr>
+
+      
+        <tr>
+  <td class="gravatar" rowspan="2">
+    <img src="/list_files/d9061868ef467a3d16a9c66c68ad395d.png" alt="" height="36" width="36">
+  </td>
+  <td class="title">
+    <a href="https://github.com/hpf1908/box2d2-js">河南新乡无名瘫痪病友治愈案例采访</a>
+  </td>
+  <td class="owner">
+    <a href="https://github.com/hpf1908">hpf1908</a>
+  </td>
+  <td class="date">
+    
+      11 Sep 12:01
+    
+  </td>
+  <td rowspan="2" class="graph participation-graph">
+    <canvas class="bars" data-source="/hpf1908/box2d2-js/graphs/owner_participation" height="20" width="416"></canvas>
+    <img alt="legend" class="legend" src="/list_files/participation_legend.png">
+  </td>
+</tr>
+<tr>
+  <td colspan="3" class="desc">用力搬动东西，损伤脊椎。</td>
+</tr>
+<tr class="sep">
+  <td>&nbsp;</td>
+  <td class="border" colspan="4">&nbsp;</td><td>
+</td></tr>
+<tr class="sep">
+  <td colspan="5">&nbsp;</td><td>
+</td></tr>
+
+
+
+      
+        <tr>
+  <td class="gravatar" rowspan="2">
+    <img src="/list_files/d2c347328a3053223b61a433fc199787.png" alt="" height="36" width="36">
+  </td>
+  <td class="title">
+    <a href="https://github.com/cwholt/EngineeringChallenges">胸2、3骨折</a>
+  </td>
+  <td class="owner">
+    <a href="https://github.com/cwholt">cwholt</a>
+  </td>
+  <td class="date">
+    
+      09 Sep 11:35
+    
+  </td>
+  <td rowspan="2" class="graph participation-graph">
+    <canvas class="bars" data-source="/cwholt/EngineeringChallenges/graphs/owner_participation" height="20" width="416"></canvas>
+    <img alt="legend" class="legend" src="/list_files/participation_legend.png">
+  </td>
+</tr>
+<tr>
+  <td colspan="3" class="desc">车祸伤</td>
+</tr>
+<tr class="sep">
+  <td>&nbsp;</td>
+  <td class="border" colspan="4">&nbsp;</td><td>
+</td></tr>
+<tr class="sep">
+  <td colspan="5">&nbsp;</td><td>
+</td></tr>
+
+      
+    </tbody></table>
+    <div class="pagination"><span class="disabled">« Previous</span> <span class="current">1</span> <a href="https://github.com/languages/ActionScript/created?page=2" rel="next">2</a> <a href="https://github.com/languages/ActionScript/created?page=3">3</a> <a href="https://github.com/languages/ActionScript/created?page=4">4</a> <a href="https://github.com/languages/ActionScript/created?page=5">5</a> <a href="https://github.com/languages/ActionScript/created?page=6">6</a> <a href="https://github.com/languages/ActionScript/created?page=7">7</a> <a href="https://github.com/languages/ActionScript/created?page=8">8</a> <a href="https://github.com/languages/ActionScript/created?page=9">9</a> <span class="gap">…</span> <a href="https://github.com/languages/ActionScript/created?page=362">362</a> <a href="https://github.com/languages/ActionScript/created?page=363">363</a> <a href="https://github.com/languages/ActionScript/created?page=2" hotkey="l" rel="next">Next »</a></div>
+  </div>
+</div>
+
+      
+  

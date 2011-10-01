@@ -1,0 +1,15 @@
+  <ul class="tabs">
+    <li><a href="/sickcases/<%= sickcase.id%>/case_show" class="selected" highlight="repo_source">概况</a></li>
+    <li><a href="/posts/act/posts_list?sickcaseid=<%= sickcase.id%>" highlight="repo_commits">治疗日志</a></li>
+    <li><a href="https://github.com/jquery/jquery/network" highlight="repo_network">病情描述</a></li>
+    <li><a href="https://github.com/jquery/jquery/pulls" highlight="repo_pulls">最新评论 (4)</a></li>
+    <li><a href="https://github.com/jquery/jquery/pulls" highlight="repo_pulls">病友圈子</a></li>
+    <li><a href="https://github.com/jquery/jquery/pulls" highlight="repo_pulls">相关医生</a></li>
+    <li><a href="https://github.com/jquery/jquery/graphs" highlight="repo_graphs">视频照片</a></li>
+
+    <li class="contextswitch nochoices">
+      <span class="repo-tree toggle leftwards" data-master-branch="master" data-ref="master">
+        创建者：<%= sickcase.created_by_login%>
+      </span>
+    </li>
+  </ul>

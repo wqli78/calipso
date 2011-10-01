@@ -1,4 +1,4 @@
-/**
+﻿/**
  * User management module
  */
 var rootpath = process.cwd() + '/',
@@ -68,6 +68,10 @@ function init(module, app, next) {
       module.router.addRoute('GET /user/profile/:username/unlock',unlockUser,{admin:true},this.parallel());
       module.router.addRoute('GET /user/profile/:username/delete',deleteUser,{admin:true},this.parallel());
 
+	  /* zhongyi01的路由设置 */
+      module.router.addRoute('GET /user/signup',signupUserForm,{template:'signup',block:'content'},this.parallel());
+      // module.router.addRoute('POST /user/signup',registerUser,null,this.parallel());
+	  
     },
     function done() {
 
@@ -991,3 +995,65 @@ function install(next) {
   )
 
 }
+
+/* -----------------zhongyi01的代码---------------------------------- */
+/**
+ * 注册表格
+ */
+function signupUserForm(req, res, template, block, next) {
+
+  // res.layout = 'default';  //不用管理界面，使用普通界面
+
+  var userForm = {
+    id:'FORM',title:req.t('Register'),type:'form',method:'POST',action:'/user/register',
+    sections:[{
+      id:'form-section-core',
+      label:'Your Details',
+      fields:[
+        {label:'Username', name:'user[username]', type:'text'},
+        {label:'Full Name', name:'user[fullname]', type:'text'},
+        {label:'Email', name:'user[email]', type:'text'},
+        // {label:'Language', name:'user[language]', type:'select', options:req.languages}, // TODO : Select based on available
+        // {label:'About You', name:'user[about]', type:'textarea'},
+        {label:'New Password', name:'user[new_password]', type:'password'},
+        {label:'Repeat Password', name:'user[repeat_password]', type:'password'},
+        {label:'Show Full Name', name:'user[showName]', type:'select',options:[
+            {label:'Never',value:'never'},
+            {label:'Registered Users Only',value:'registered'},
+            {label:'Public',value:'public'}]},
+        {label:'Show Email', name:'user[showEmail]', type:'select',options:[
+            {label:'Never',value:'never'},
+            {label:'Registered Users Only',value:'registered'},
+            {label:'Public',value:'public'}]}
+      ],
+    }],
+    buttons:[
+      {name:'submit', type:'submit', value:'Register'}
+    ]
+  };
+
+  // 允许管理员为其它用户设置角色
+  if(req.session.user && req.session.user.isAdmin) {
+
+    // Role checkboxes
+      var roleFields = [];
+      calipso.data.roleArray.forEach(function(role) {
+        roleFields.push(
+          {label:role, name:'user[roles][' + role + ']', type:'checkbox', checked:false}
+        );
+      });
+
+      userForm.sections[0].fields.push({
+          type: 'fieldset',
+          name: 'roles_fieldset', // shouldn't need a name ...
+          legend: 'User Roles',
+          fields: roleFields
+      });
+
+  }
+
+  calipso.form.render(userForm, null, req, function(form) {
+    calipso.theme.renderItem(req, res, template, block, {}, next);
+  });
+
+};

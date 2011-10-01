@@ -1,0 +1,76 @@
+
+<%- partial('../messages') %>
+    
+
+<div class="pagehead">
+ <%- partial('../_tabs_pjax') %>
+ 
+ 
+<div class="pjax">
+  
+  
+</div>
+
+</div><!-- /.pagehead -->
+
+
+
+  <div id="languages">
+    <div class="popular compact">
+      <div class="all_languages">
+  <div class="right">
+    <ul>
+      <li>所有种类</li>
+	  
+	  <% cats.forEach(function(cat){ %>
+	  
+	  <li> <a href=""> <%= cat.name %> </a></li>
+	  
+	  
+	  <%})%>
+      
+ 
+      
+    </ul>
+  </div>
+</div>
+
+
+      <div class="left">
+        <table width="700">
+          
+            <tbody><tr>
+              <td width="100"><a href="https://github.com/languages/JavaScript">肝病</a></td>
+              <td>
+                <a href="https://github.com/languages/JavaScript" class="bar" style="width: 100%;">20%</a>
+              </td>
+            </tr>
+          
+            <tr>
+              <td width="100"><a href="https://github.com/languages/Ruby">癌症</a></td>
+              <td>
+                <a href="https://github.com/languages/Ruby" class="bar" style="width: 80%;">16%</a>
+              </td>
+            </tr>
+          
+            <tr>
+              <td width="100"><a href="https://github.com/languages/Python">骨科</a></td>
+              <td>
+                <a href="https://github.com/languages/Python" class="bar" style="width: 45%;">9%</a>
+              </td>
+            </tr>
+          
+            <tr>
+              <td width="100"><a href="https://github.com/languages/Shell">妇科</a></td>
+              <td>
+                <a href="https://github.com/languages/Shell" class="bar" style="width: 40%;">8%</a>
+              </td>
+            </tr>
+          
+          
+        </tbody></table>
+      </div>
+    </div>
+  </div>
+
+      

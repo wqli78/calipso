@@ -1,0 +1,29 @@
+
+<%- partial('../messages') %>
+
+<div id="login" class="login_form">
+      <form action="/users/act/login_post" method="post">
+	  <div style="margin:0;padding:0">
+	  <input name="authenticity_token" value="fdbf8267fff08a2f7dfd23cf1909e4c49a882a2d" type="hidden">
+	  </div>      
+      <h1>登录 <a href="/users/act/signup">(注册)</a></h1>
+      
+    <div class="formbody">
+    
+        <label for="login">
+          用户名或者邮件<br>
+          <input class="text" id="login_field" name="user[email]" style="width: 21em;" tabindex="1" type="text">
+        </label>
+
+        <label for="password">
+          密码 <a href="">(忘记密码)</a>
+          <br>
+          <input class="text" id="password" name="user[password]" style="width: 21em;" tabindex="2" value="" type="password">
+        </label>
+
+        <label class="submit_btn">
+          <input id="return_to" name="return_to" value="/jquery/jquery" type="hidden">                    
+		  <input name="commit" tabindex="3" value="登录" type="submit">
+        </label>
+    </div>
+    </form>  </div>

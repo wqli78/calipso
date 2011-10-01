@@ -1,0 +1,40 @@
+﻿
+<h1>users</h1>
+<%- partial('../messages') %>
+<div style="float: left; width: 60%;">
+	<table class="tabular">
+		<tr>
+			<th>姓名</th>
+			<th>性别</th>
+			<th>邮件</th>
+		</tr>
+		<% users.forEach(function(user){ %>
+		<tr>
+			<td><a href="/user/<%= user.id %>"><%= user.name %></a></td>
+			<td><a href="/user/<%= user.id %>"><%= user.sex %></a></td>
+			<td><a href="/user/<%= user.id %>"><%= user.email %></a></td>
+		</tr>
+		<% }) %>
+		<tfoot>
+			<tr>
+				<td colspan='3'><%- pagerHtml %></td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+<div style="float: left; margin-left: 5%; width: 35%;">
+	<form method="post" action="/users">
+		<input type="hidden" name="_method" value="post" />
+		<p>
+		
+  <% for (var key in myschema){ %>	
+			<%= myschema[key]["cn_name"]  %>: <input type="text" name="user[<%= key%>]" />
+  <% } %>
+
+			
+		</p>
+		<p>
+			<button class="button-submit" type="submit" value="Create">创建</button>
+		</p>
+	</form>
+</div>

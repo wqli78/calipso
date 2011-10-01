@@ -1,0 +1,60 @@
+﻿
+<h1>查看 cat</h1>
+<script type="text/javascript">
+	$(function(){
+
+		// Delete User
+		$('.button-delete').click(function(){
+			
+			var catId = this.id;
+			
+			$("#dialog-confirm" ).dialog({
+				resizable: false,
+				height:180,
+				width:400,
+				modal: true,
+				buttons: {
+					"删除": function() {
+						$( this ).dialog( "close" );
+						$.ajax({
+							   type: "DELETE",
+							   url: "/cat/" + catId,				   
+							   success: function(msg) {				   	  
+								  window.location.replace("/cats");
+							   },
+							   error: function(msg) {					  
+								  alert("无法删除 cat - 有地方出错了!");
+							   }
+						});
+					},
+					'取消': function() {
+						$( this ).dialog( "close" );
+					}
+				}
+			});			
+			
+		});
+		
+	});
+</script>
+<div id="dialog-confirm" style="display: none;" title="删除 cat?">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>这个对象将被永远删除，您确定这样做?</p>
+</div>
+<%- partial('../messages') %>
+<table>
+
+  <% for (var key in myschema){ %>
+  	<tr>
+  		<th><%= myschema[key]['cn_name']  %></th><td><%= cat[key] %></td>
+  	</tr>
+  <% } %>
+</table>
+<a class="button-edit" href="<%= cat.id %>/edit" title="Edit cat ...">
+	编辑 
+</a>
+<button class="button-delete" id="<%= cat.id %>"  title="Delete cat ...">
+	删除
+</button>
+<a class="button-home" href="/cats" title="List Cats">
+	列表 Cats
+</a>

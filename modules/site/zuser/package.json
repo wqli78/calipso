@@ -1,0 +1,11 @@
+{
+  "name": "zuser",
+  "description": "中医案例网用户模块.",
+  "version": "0.0.1",
+  "homepage": "http://zhongyi01.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cliftonc/calipso.git"
+  },
+  "author": "wqli78 <wqli78@gmail.com> "
+}

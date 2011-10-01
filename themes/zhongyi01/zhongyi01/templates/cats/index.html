@@ -1,0 +1,34 @@
+﻿
+<h1>病种分类</h1>
+<%- partial('../messages') %>
+<div>
+	<table >
+		<tr>
+			<th>分类名称</th>
+		</tr>
+		<% cats.forEach(function(cat){ %>
+		<tr>
+			<td><a href="/cat/<%= cat.id %>"><%= cat.name %></a></td>
+		</tr>
+		<% }) %>
+		<tfoot>
+			<tr>
+				<td colspan='2'><%- pagerHtml %></td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+<div >
+	<form method="post" action="/cats">
+		<input type="hidden" name="_method" value="post" />
+		<p>
+		 <% for (var key in myschema){ %>	
+			<%= myschema[key]["cn_name"]  %>: <input type="text" name="cat[<%= key%>]" />
+		<% } %>
+
+		</p>
+		<p>
+			<button class="button-submit" type="submit" value="Create">创建</button>
+		</p>
+	</form>
+</div>

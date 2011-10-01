@@ -1,0 +1,102 @@
+
+
+
+<div class="pagehead">
+  <h1>
+    创建新案例
+    
+  </h1>
+  
+</div>
+
+<div class="columns accountcols">
+  <div class="main">
+    
+    <form action="/sickcases/act/create_post" method="post">
+	<input name="sickcase[created_by]" value="<%= guser()._id%>" type="hidden">
+	<input name="sickcase[created_by_login]" value="<%= guser().login%>" type="hidden">
+
+      <dl class="form">
+		<dt><label error="false" for="repository_name" style="width:39em">案例名称:</label></dt>
+		<dd><input error="false" id="repository_name" name="sickcase[name]" size="30" style="width: 39em;" type="text"></dd>
+	</dl>
+
+      <dl class="form">
+        <dt><label for="repository_homepage">类别</label> <small style="font-weight:normal"></small></dt>
+        <dd><select name="sickcase[sick_cat]" size="1" style="width: 125px;" id="repository_homepage">
+			<% cats.forEach(function(cat){ %>
+				<option value="<%= cat.id %>"><%= cat.name %></option>
+			<% }) %>
+			</select>
+		</dd>
+      </dl>
+
+      <dl class="form">
+        <dt><label for="repository_description">简介:</label> <small style="font-weight:normal">(可选)</small></dt>
+        <dd><input id="repository_description" name="sickcase[sick_intro]" size="30" style="width: 39em;" type="text"></dd>
+      </dl>
+
+
+      什么人可以看这个案例? <span>(以后也可以更改)</span>
+
+      <p class="checkbox">
+        <label>
+          <input name="sickcase[private_width]" value="all" checked="checked" type="radio">
+          &nbsp;&nbsp;所有人可看 
+          </label></p>
+        
+      <p></p>
+
+      <p class="checkbox">
+        <label>
+          <input name="sickcase[private_width]" value="bingyou"  type="radio">
+          &nbsp;&nbsp;只有病友可看 
+                        
+          
+          </label>
+		</p>
+	
+      <p></p>
+
+
+      <p class="checkbox">
+        <label>
+          <input name="sickcase[private_width]" value="private"  type="radio">
+          &nbsp;&nbsp;不公开，完全私有（仅用于记录治疗经历）
+          
+          </label>
+		</p>
+		  <div id="fb_private_repos" class="facebox" style="display: none;">
+            <p><b>仅同类病友</b> 的案例 <b>只能</b> 由同类别病友查看:</p>
+            <ul>
+              <li>这样可以再一定程度上保护您的隐私</li>
+              <li>只在病友之间公开治疗信息</li>
+            </ul>
+          </div>
+	
+      <p></p>
+
+      
+
+      <div class="form-actions">
+        <button type="submit" class="classy js-oneclick" data-afterclick="Creating Repository…">
+          <span>创建案例</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="sidebar">
+    <div class="fieldgroup">
+      <h2>注意：</h2>
+      
+      <p class="note">代替他人创建案例的话，必须征得当事人的同意！</p>
+
+      <div id="fb_fork" class="facebox" style="display: none;">
+      
+      </div>
+    </div>
+  </div><!-- /.sidebar -->
+</div>
+      
+

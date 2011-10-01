@@ -1,0 +1,92 @@
+
+<div class="pagehead">
+  <h1>在中医案例网注册</h1>
+  <ul class="actions">
+    <li><a href="https://github.com/login" class="minibutton btn-log-in-to-an-existing-account "><span><span class="icon"></span>我已经注册过了</span></a></li>
+  </ul>
+</div>
+
+
+<div class="columns equacols bordered">
+  <div class="column main">
+ 
+    
+
+<form action="/zuser/signup" autocomplete="off" id="FORM" method="post">
+<div style="margin:0;padding:0"><input name="authenticity_token" value="fdbf8267fff08a2f7dfd23cf1909e4c49a882a2d" type="hidden"></div>
+  
+  <h2 class="subdued">
+    创建您的帐号
+  </h2>
+  
+  <div class="fieldgroup">
+    
+
+    <div class="fields">
+      <dl class="form autocheck">
+    <dt><label check-url="/signup_check/username" error="false" for="user_login" hint="Your username, &lt;b&gt;not&lt;/b&gt; your company's username." name="user[username]">登录名称</label></dt>
+    <dd><input check-url="/signup_check/username" error="false" hint="Your username, &lt;b&gt;not&lt;/b&gt; your company's username." id="user_login" name="user[username]" size="30" type="text"><p class="note">您的登录用户名, <b>不要</b> 忘记了.</p></dd></dl>
+
+      <dl class="form autocheck">
+    <dt><label check-url="/signup_check/email" for="user_email" hint="We promise we won't share your email with anyone." name="user[email]">Email 地址</label></dt>
+    <dd><input check-url="/signup_check/email" hint="We promise we won't share your email with anyone." id="user_email" name="user[email]" size="30" type="text"><p class="note">我们不会公开你的Email.</p></dd></dl>
+
+      <dl class="form autocheck">
+    <dt><label check-url="/signup_check/password" error="false" for="user_password" hint="Must contain one lowercase letter, one number, and be at least 7 characters long" name="user[new_password]">密码</label></dt>
+    <dd><input check-url="/signup_check/password" error="false" hint="Must contain one lowercase letter, one number, and be at least 7 characters long" id="user_password" name="user[new_password]" size="30" type="password"><p class="note">通常包含字母数字，也可以包含一些特殊符号来增强安全性。</p></dd></dl>
+
+      <dl class="form">
+    <dt><label error="false" for="user_password_confirmation">确认密码</label></dt>
+    <dd><input error="false" id="user_password_confirmation" name="user[repeat_password]" size="30" type="password"></dd></dl>
+    </div>
+  </div>
+
+  <input id="user_plan" name="user[plan]" value="free" type="hidden">
+  <input id="org_plan" name="org_plan" type="hidden">
+
+  <div class="fieldgroup" style="display:none">
+    <div class="fields">
+      <dl class="form">
+    <dt><label error="false" for="user_coupon" name="user[coupon]">Coupon</label></dt>
+    <dd><input error="false" id="user_coupon" name="user[coupon]" size="30" type="text"></dd></dl>
+    </div>
+  </div>
+
+  
+
+  
+
+  
+  <div class="form-warning">
+    <p>点击下面的创建账户，表示您已经同意了
+    <a href="http://help.github.com/terms/" target="_blank">服务协议</a> 和
+    <a href="http://help.github.com/privacy/" target="_blank">隐私条款</a>.</p>
+  </div>
+  
+  <div class="form-actions">
+    <button type="submit" class="classy js-oneclick" id="signup_button"><span>创建账户</span></button>
+  </div>
+
+</form>
+
+
+  </div><!-- /.column.main -->
+  
+  <div class="column secondary">
+
+    <div class="featured-brands">
+      <p><img alt="新浪、搜狐、 腾讯、百度和淘宝" src="signup_files/brands.png"></p>
+      <p></p>
+    </div>
+
+    <ul class="selling-points">
+      <li>共享治疗经历，借鉴成功经验，吸取失败教训</li>
+      <li>托管治疗费用，少花没用的钱</li>
+      <li>不再一个人战斗，共同寻找、验证好医生</li>
+    </ul>
+
+  </div><!-- /.column.sidebar -->
+  
+</div>
+
+  

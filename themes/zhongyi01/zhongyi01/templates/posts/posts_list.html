@@ -1,0 +1,1037 @@
+
+      <div class="pagehead repohead vis-public   emptyrepohead shortdetails instapaper_ignore readability-menu">
+
+      
+
+<%- partial('../sickcases/_title-actions-bar') %>
+<%- partial('../sickcases/_tabs') %>
+  
+
+  
+  
+  
+  
+  
+
+
+
+        
+
+        
+
+      </div><!-- /.pagehead -->
+
+      
+
+
+
+
+
+
+
+
+
+<div id="issues_next">
+  <div class="browser_header">
+    <ul class="actions">
+      <li class="search ">
+        <form action="/visionmedia/expresso/issues/search" method="get">
+          
+            <a href="https://github.com/visionmedia/expresso/issues/search">Search:</a>
+          
+          <span class="fieldwrap">
+            <input style="outline: medium none;" autocomplete="off" name="q" id="js-issues-quicksearch" placeholder="Issues &amp; Milestones…" data-url="/visionmedia/expresso/issues/quicksearch" type="text"><button type="submit" class="minibutton"><span>Search</span></button>
+          </span>
+          <div class="autocomplete-results" style="display: none; left: 49.65px; top: 32px; width: 265.7px;"></div>
+          <div class="quicksearch-loading" style="display: none">
+            <div class="header">
+              <a class="selected initial" href="https://github.com/visionmedia/expresso/issues/search">
+                See all results
+              </a>
+            </div>
+          </div>
+        </form>
+      </li>
+      <li class="">
+        <a href="/posts/act/create_view?sickcaseid=<%= sickcase.id %>" class="minibutton btn-new-issue "><span><span class="icon"></span>新日志</span></a>
+      </li>
+    </ul>
+
+    <ul class="main_nav">
+      <li class="selected"><a href="https://github.com/visionmedia/expresso/issues">Browse Issues</a></li>
+      <li><a href="https://github.com/visionmedia/expresso/issues/milestones">Milestones</a></li>
+    </ul>
+  </div>
+
+    <div id="issues_list" class="columns browser" data-params="">
+    <style type="text/css" media="screen">
+  
+</style>
+
+<div class="context-pane label-context" style="display: none">
+  <a href="javascript:;" class="close"></a>
+  <div class="title">Assign or unassign labels</div>
+  <div class="body">
+    <ul class="smallnav labels" data-url="/visionmedia/expresso/issues/label">
+      
+    </ul>
+    <div class="rule"></div>
+    <button class="minibutton update-labels"><span>Update</span></button>
+  </div>
+</div>
+
+<div class="context-pane milestone-context" data-selected-milestone="" style="display: none">
+  <a href="javascript:;" class="close"></a>
+  <div class="title">Select a milestone to filter by</div>
+  <div class="body pane-selector">
+    
+
+    <a href="https://github.com/visionmedia/expresso/issues?milestone=none" class="selector-item milestone " data-milestone="none">
+      <h4>Issues with no milestone</h4>
+    </a>
+
+    
+  </div>
+</div>
+
+<div class="context-pane milestone-assignment-context js-milestone-context" style="display: none">
+  <a href="javascript:;" class="close"></a>
+  <div class="title">Set milestone</div>
+  <div class="body pane-selector milestone-selector js-filterable-milestones" data-issue-numbers="">
+    
+
+
+
+
+  <form action="/visionmedia/expresso/issues/milestone" method="post"><div style="margin:0;padding:0"><input name="authenticity_token" value="5cd764f948ef61c37b31b913df6eeec71e708feb" type="hidden"></div>
+    
+
+  <div class="filterbar">
+    <div class="placeholder-field js-placeholder-field">
+      <label style="display: block;" class="placeholder" for="context-milestone-filter-field" data-placeholder-mode="sticky">Filter milestones</label>
+      <input id="context-milestone-filter-field" class="milestone-filter" type="text">
+    </div>
+
+    <ul class="tabs">
+      <li><a href="#" data-filter="open" class="selected">Open</a></li>
+      <li><a href="#" data-filter="closed">Closed</a></li>
+    </ul>
+  </div>
+
+  
+
+  
+    <div class="selector-item for-selected clear">
+      <input id="milestone_clear" name="milestone" value="clear" type="radio">
+      <h4 class="clear-text">Clear this milestone</h4>
+    </div>
+  
+
+  
+
+  
+
+  <div class="no-results" style="">No milestones to show</div>
+
+  <div class="selector-item new-milestone-item" style="display:none">
+    <h4>Create &amp; assign to a new milestone</h4>
+    <p class="milestone-title"></p>
+  </div>
+
+
+  </form>
+
+  </div>
+</div>
+
+<div class="context-pane assignee-assignment-context js-assignee-context" style="display: none">
+  <a href="javascript:;" class="close"></a>
+  <div class="title">Set assignee</div>
+  <div class="body pane-selector user-selector js-pane-radio-selector">
+
+    <div class="filterbar">
+      <input class="js-assignee-filter" type="text">
+    </div>
+
+    <label class="selector-item clear">
+      <input data-url="/visionmedia/expresso/issues/assign" id="assignment_assignee_none" name="assignment[assignee]" value="none" type="radio">
+      <h4>Clear assignee</h4>
+    </label>
+
+    <ul>
+    
+    <li class="selector-item">
+      <label>
+        <input data-url="/visionmedia/expresso/issues/assign" id="assignment_assignee_kkaefer" name="assignment[assignee]" value="kkaefer" type="radio">
+        <h4>
+          <span class="avatar"><img src="git_issues_list_files/d3586b91137e12d1f521d07f118a187e.jpg" alt="" height="18" width="18"></span>
+          kkaefer
+        </h4>
+      </label>
+    </li>
+    
+    <li class="selector-item">
+      <label>
+        <input data-url="/visionmedia/expresso/issues/assign" id="assignment_assignee_visionmedia" name="assignment[assignee]" value="visionmedia" type="radio">
+        <h4>
+          <span class="avatar"><img src="git_issues_list_files/f1e3ab214a976a39cfd713bc93deb10f.jpg" alt="" height="18" width="18"></span>
+          visionmedia
+        </h4>
+      </label>
+    </li>
+    
+    </ul>
+
+  </div>
+</div>
+
+<div class="column sidebar">
+  <ul class="bignav">
+    <li>
+      <a href="https://github.com/visionmedia/expresso/issues" class="selected">
+        <span class="count">64</span> 所有日志
+      </a>
+    </li>
+    
+      
+        <li>
+          <a href="https://github.com/visionmedia/expresso/issues/created_by/wqli78">
+            <span class="count">0</span> 最新回复的日志
+          </a>
+        </li>
+      
+      <li>
+        <a href="https://github.com/visionmedia/expresso/issues/mentioned/wqli78">
+          <span class="count">0</span> 最受欢迎的日志
+        </a>
+      </li>
+    
+  </ul>
+
+  
+
+  
+
+  <div class="js-editable-labels-container">
+    
+      
+    
+
+  </div><!-- /.js-editable-labels-container -->
+
+  
+
+</div>
+
+<div class="column main">
+
+  <a class="keyboard-shortcuts" href="#keyboard_shortcuts_pane" rel="facebox.shortcuts">Keyboard shortcuts available</a>
+
+  <p class="clear-filters">
+    
+      No active filters. Use the sidebar to filter issues.
+    
+  </p>
+
+  <div class="browser-content">
+    <div class="filterbar">
+      <ul class="filters">
+        <li data-filter="open" class="selected">
+          <a href="https://github.com/visionmedia/expresso/issues?state=open">
+            64
+            open issues
+          </a>
+        </li>
+        <li data-filter="closed" class="">
+          <a href="https://github.com/visionmedia/expresso/issues?state=closed">
+            70
+            closed issues
+          </a>
+        </li>
+      </ul>
+
+      <ul class="sorts"><li class="desc" data-href="/visionmedia/expresso/issues?sort=created" data-sort="created"><a href="https://github.com/visionmedia/expresso/issues?sort=created" rel="nofollow">Submitted</a></li><li data-href="/visionmedia/expresso/issues?sort=updated" data-sort="updated"><a href="https://github.com/visionmedia/expresso/issues?sort=updated" rel="nofollow">Updated</a></li><li data-href="/visionmedia/expresso/issues?sort=comments" data-sort="comments"><a href="https://github.com/visionmedia/expresso/issues?sort=comments" rel="nofollow">Comments</a></li></ul>
+    </div>
+
+    <div class="context-loader" style="display:none">Sending Request…</div>
+
+    <div class="error" style="display:none">
+      <p>There was an error serving your request</p>
+    </div>
+
+    <div class="issues ">
+      
+        <div class="actions">
+          
+            <div class="pagination"><span class="disabled">« Previous</span> <span class="current">1</span> <a href="https://github.com/visionmedia/expresso/issues?page=2&amp;state=open" rel="next">2</a> <a href="https://github.com/visionmedia/expresso/issues?page=3&amp;state=open">3</a> <a href="https://github.com/visionmedia/expresso/issues?page=2&amp;state=open" hotkey="l" rel="next">Next »</a></div>
+          
+          
+        </div>
+      
+
+      
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tbody>
+		  
+		  
+		  
+		<% posts.forEach(function(post){ %>
+		<tr id= "post_<%= post.id %>" class="issue even unread active">
+			  <td class="read-status">
+				<div class="wrapper">
+				  <span title="Unread"></span>
+				</div>
+			  </td>
+
+			  <td class="number">
+				#<%= post.id %>
+			  </td>
+
+			  <td class="info">
+				<div class="wrapper">
+				  <h3>
+					<a href="/post/<%= post.id %>/post_show?sickcaseid=<%= sickcase.id%>"><%= post.title %></a>
+					
+				  </h3>
+						<p>作者： <strong><a href="/users/<%= post.auther %>">wqli78</a></strong>
+				  <time class="js-relative-date" datetime="<%= post.created_at %>" title="2011-09-22 15:24:24">发布时间：7小时前</time></p>
+				</div>
+			  </td>			  
+			  
+		  </tr>
+		<% }) %>		  
+		  
+	
+<tr id="issue_131" class="issue even unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+  <td class="number">
+    #131
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/issues/131">Error: require.paths is removed. Use node_modules folders, or the NODE_PATH environment variable instead.</a>
+      </h3>
+
+            <p>by <strong><a href="https://github.com/ollym">ollym</a></strong>
+      <time class="js-relative-date" datetime="2011-09-15T08:54:41-07:00" title="2011-09-15 08:54:41">September 15, 2011</time></p>
+    </div>
+  </td>
+</tr>
+
+
+
+<tr id="issue_129" class="issue odd unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #129
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/issues/129">expresso doens't work with https servers</a>
+        
+      </h3>
+
+      
+            <p>by <strong><a href="https://github.com/dontcallmedom">dontcallmedom</a></strong>
+      <time class="js-relative-date" datetime="2011-09-04T15:18:04-07:00" title="2011-09-04 15:18:04">September 05, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_128" class="issue even unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #128
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/pull/128">explicit process.exit for serial-mode</a>
+        
+      </h3>
+
+            <span class="comments">
+        <a href="https://github.com/visionmedia/expresso/pull/128">1 comment</a>
+      </span>
+      
+            <span class="pull-requests">
+        <a href="https://github.com/visionmedia/expresso/pull/128">Code Attached</a>
+      </span>
+            <p>by <strong><a href="https://github.com/shivaken">shivaken</a></strong>
+      <time class="js-relative-date" datetime="2011-09-03T11:28:44-07:00" title="2011-09-03 11:28:44">September 04, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_127" class="issue odd unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #127
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/pull/127">Ability to tag tests</a>
+        
+      </h3>
+
+            <span class="comments">
+        <a href="https://github.com/visionmedia/expresso/pull/127">3 comments</a>
+      </span>
+      
+            <span class="pull-requests">
+        <a href="https://github.com/visionmedia/expresso/pull/127">Code Attached</a>
+      </span>
+            <p>by <strong><a href="https://github.com/bnoguchi">bnoguchi</a></strong>
+      <time class="js-relative-date" datetime="2011-09-01T12:42:39-07:00" title="2011-09-01 12:42:39">September 02, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_125" class="issue even unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #125
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/issues/125">Fail to late or async export tests</a>
+        
+      </h3>
+
+      
+            <p>by <strong><a href="https://github.com/flockonus">flockonus</a></strong>
+      <time class="js-relative-date" datetime="2011-08-17T14:08:30-07:00" title="2011-08-17 14:08:30">August 18, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_121" class="issue odd unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #121
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/issues/121">Does not work in Mac OS X Snow Leopard</a>
+        
+      </h3>
+
+            <span class="comments">
+        <a href="https://github.com/visionmedia/expresso/issues/121">6 comments</a>
+      </span>
+      
+            <p>by <strong><a href="https://github.com/dscape">dscape</a></strong>
+      <time class="js-relative-date" datetime="2011-08-02T05:51:17-07:00" title="2011-08-02 05:51:17">August 02, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_120" class="issue even unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #120
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/pull/120">fix serial bug</a>
+        
+      </h3>
+
+            <span class="comments">
+        <a href="https://github.com/visionmedia/expresso/pull/120">1 comment</a>
+      </span>
+      
+            <span class="pull-requests">
+        <a href="https://github.com/visionmedia/expresso/pull/120">Code Attached</a>
+      </span>
+            <p>by <strong><a href="https://github.com/poelzi">poelzi</a></strong>
+      <time class="js-relative-date" datetime="2011-07-29T01:24:19-07:00" title="2011-07-29 01:24:19">July 29, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_117" class="issue odd unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #117
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/pull/117">&lt;sigh&gt; simply typo see d7db22ef</a>
+        
+      </h3>
+
+      
+            <span class="pull-requests">
+        <a href="https://github.com/visionmedia/expresso/pull/117">Code Attached</a>
+      </span>
+            <p>by <strong><a href="https://github.com/AD7six">AD7six</a></strong>
+      <time class="js-relative-date" datetime="2011-07-14T10:22:00-07:00" title="2011-07-14 10:22:00">July 15, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_116" class="issue even unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #116
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/pull/116">-C flag for generating and reporting test coverage for all files in working directory</a>
+        
+      </h3>
+
+      
+            <span class="pull-requests">
+        <a href="https://github.com/visionmedia/expresso/pull/116">Code Attached</a>
+      </span>
+            <p>by <strong><a href="https://github.com/Coreh">Coreh</a></strong>
+      <time class="js-relative-date" datetime="2011-07-12T09:28:52-07:00" title="2011-07-12 09:28:52">July 13, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_114" class="issue odd unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #114
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/issues/114">Remove Polling for ASync Support &amp; Watch Props Instead</a>
+        
+      </h3>
+
+            <span class="comments">
+        <a href="https://github.com/visionmedia/expresso/issues/114">3 comments</a>
+      </span>
+      
+            <p>by <strong><a href="https://github.com/mhemesath">mhemesath</a></strong>
+      <time class="js-relative-date" datetime="2011-06-28T07:14:53-07:00" title="2011-06-28 07:14:53">June 28, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_111" class="issue even unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #111
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/issues/111">expresso --cov does not print code coverage on Node 0.4.8</a>
+        
+      </h3>
+
+            <span class="comments">
+        <a href="https://github.com/visionmedia/expresso/issues/111">2 comments</a>
+      </span>
+      
+            <p>by <strong><a href="https://github.com/jeremys">jeremys</a></strong>
+      <time class="js-relative-date" datetime="2011-06-21T09:39:28-07:00" title="2011-06-21 09:39:28">June 22, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_110" class="issue odd unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #110
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/issues/110">consider removing jscoverage dependency</a>
+        
+      </h3>
+
+            <span class="comments">
+        <a href="https://github.com/visionmedia/expresso/issues/110">9 comments</a>
+      </span>
+      
+            <p>by <strong><a href="https://github.com/weepy">weepy</a></strong>
+      <time class="js-relative-date" datetime="2011-06-21T01:05:13-07:00" title="2011-06-21 01:05:13">June 21, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_105" class="issue even unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #105
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/pull/105">if err.name is blank (not an Error instance), use sys.inspect</a>
+        
+      </h3>
+
+      
+            <span class="pull-requests">
+        <a href="https://github.com/visionmedia/expresso/pull/105">Code Attached</a>
+      </span>
+            <p>by <strong><a href="https://github.com/wadey">wadey</a></strong>
+      <time class="js-relative-date" datetime="2011-06-06T12:05:42-07:00" title="2011-06-06 12:05:42">June 07, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_104" class="issue odd unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #104
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/issues/104">Use long-stack-traces for assert.response()</a>
+        
+      </h3>
+
+      
+            <p>by <strong><a href="https://github.com/kkaefer">kkaefer</a></strong>
+      <time class="js-relative-date" datetime="2011-06-02T13:30:57-07:00" title="2011-06-02 13:30:57">June 03, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_103" class="issue even unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #103
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/issues/103">How to know which tests ran fine?</a>
+        
+      </h3>
+
+            <span class="comments">
+        <a href="https://github.com/visionmedia/expresso/issues/103">2 comments</a>
+      </span>
+      
+            <p>by <strong><a href="https://github.com/balupton">balupton</a></strong>
+      <time class="js-relative-date" datetime="2011-05-31T06:18:48-07:00" title="2011-05-31 06:18:48">May 31, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_102" class="issue odd unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #102
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/issues/102">Installing via `npm` does not work</a>
+        
+      </h3>
+
+            <span class="comments">
+        <a href="https://github.com/visionmedia/expresso/issues/102">7 comments</a>
+      </span>
+      
+            <p>by <strong><a href="https://github.com/hugdubois">hugdubois</a></strong>
+      <time class="js-relative-date" datetime="2011-05-30T08:17:06-07:00" title="2011-05-30 08:17:06">May 30, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_101" class="issue even unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #101
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/pull/101">-d,--directory flag to specify the location of test directory.</a>
+        
+      </h3>
+
+      
+            <span class="pull-requests">
+        <a href="https://github.com/visionmedia/expresso/pull/101">Code Attached</a>
+      </span>
+            <p>by <strong><a href="https://github.com/Raevel">Raevel</a></strong>
+      <time class="js-relative-date" datetime="2011-05-30T05:13:33-07:00" title="2011-05-30 05:13:33">May 30, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_99" class="issue odd unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #99
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/pull/99">Fix for issue 65</a>
+        
+      </h3>
+
+            <span class="comments">
+        <a href="https://github.com/visionmedia/expresso/pull/99">1 comment</a>
+      </span>
+      
+            <span class="pull-requests">
+        <a href="https://github.com/visionmedia/expresso/pull/99">Code Attached</a>
+      </span>
+            <p>by <strong><a href="https://github.com/Raevel">Raevel</a></strong>
+      <time class="js-relative-date" datetime="2011-05-26T16:26:09-07:00" title="2011-05-26 16:26:09">May 27, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_97" class="issue even unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #97
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/issues/97">Sent files e.g. gifs are not returned properly (e.g. cannot be written)</a>
+        
+      </h3>
+
+            <span class="comments">
+        <a href="https://github.com/visionmedia/expresso/issues/97">4 comments</a>
+      </span>
+      
+            <p>by <strong><a href="https://github.com/grosser">grosser</a></strong>
+      <time class="js-relative-date" datetime="2011-05-20T09:41:59-07:00" title="2011-05-20 09:41:59">May 21, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_96" class="issue odd unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #96
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/pull/96">Kill test server before checking assertions.</a>
+        
+      </h3>
+
+      
+            <span class="pull-requests">
+        <a href="https://github.com/visionmedia/expresso/pull/96">Code Attached</a>
+      </span>
+            <p>by <strong><a href="https://github.com/mjumbewu">mjumbewu</a></strong>
+      <time class="js-relative-date" datetime="2011-05-18T14:39:58-07:00" title="2011-05-18 14:39:58">May 19, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_95" class="issue even unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #95
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/issues/95">assert.response hangs if assertions fail</a>
+        
+      </h3>
+
+            <span class="comments">
+        <a href="https://github.com/visionmedia/expresso/issues/95">5 comments</a>
+      </span>
+      
+            <p>by <strong><a href="https://github.com/mjumbewu">mjumbewu</a></strong>
+      <time class="js-relative-date" datetime="2011-05-16T17:03:20-07:00" title="2011-05-16 17:03:20">May 17, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_93" class="issue odd unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #93
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/pull/93">Change use of sys.puts and sys.print.</a>
+        
+      </h3>
+
+      
+            <span class="pull-requests">
+        <a href="https://github.com/visionmedia/expresso/pull/93">Code Attached</a>
+      </span>
+            <p>by <strong><a href="https://github.com/danbell">danbell</a></strong>
+      <time class="js-relative-date" datetime="2011-04-26T16:45:07-07:00" title="2011-04-26 16:45:07">April 27, 2011</time></p>
+    </div>
+  </td>
+</tr>
+<tr id="issue_91" class="issue even unread">
+  <td class="read-status">
+    <div class="wrapper">
+      <span title="Unread"></span>
+    </div>
+  </td>
+
+  
+
+  <td class="number">
+    #91
+  </td>
+
+  <td class="info">
+    <div class="wrapper">
+      
+
+      <h3>
+        <a href="https://github.com/visionmedia/expresso/pull/91">Fix for issue 85 (+ see my comments in issue)</a>
+        
+      </h3>
+
+      
+            <span class="pull-requests">
+        <a href="https://github.com/visionmedia/expresso/pull/91">Code Attached</a>
+      </span>
+            <p>by <strong><a href="https://github.com/Raevel">Raevel</a></strong>
+      <time class="js-relative-date" datetime="2011-04-20T03:59:14-07:00" title="2011-04-20 03:59:14">April 20, 2011</time></p>
+    </div>
+  </td>
+</tr>
+
+        </tbody></table>
+      
+
+      <div class="footerbar">
+        
+          <div class="pagination"><span class="disabled">« Previous</span> <span class="current">1</span> <a href="https://github.com/visionmedia/expresso/issues?page=2&amp;state=open" rel="next">2</a> <a href="https://github.com/visionmedia/expresso/issues?page=3&amp;state=open">3</a> <a href="https://github.com/visionmedia/expresso/issues?page=2&amp;state=open" hotkey="l" rel="next">Next »</a></div>
+        
+        
+          <p class="footerbar-text">
+            25 open issues in this view
+          </p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+</div>
+
+  
+     

@@ -1,0 +1,13 @@
+﻿
+<h1>编辑 Sickcase <%= sickcase.name %></h1>
+<%- partial('../messages') %>
+<form method="post" action="/sickcase/<%= sickcase.id %>">
+  <input type="hidden" name="_method" value="put" />  
+  <% for (var key in myschema){ %>
+	  <p><li><%= myschema[key]["cn_name"]  %>: <input type="text" name="sickcase[<%= key%>]" value="<%= sickcase[key] %>" /></li></p>
+  <% } %>
+  <p>
+  	<button class="button-submit" type="submit" value="Update">保存</button>
+  	<a class="button-cancel" href="/sickcase/<%= sickcase.id %>">取消</a>
+  </p>
+</form>
