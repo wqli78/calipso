@@ -5,6 +5,7 @@ modules/downloaded
 modules/custom
 themes/downloaded
 themes/custom
+themes/zhongyi01/zhongyi01/public/js/xheditor
 *.pid
 *.log
 *.swp
