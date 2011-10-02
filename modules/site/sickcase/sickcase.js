@@ -4,6 +4,7 @@
 var rootpath = process.cwd() + '/',
   path = require('path'),
   calipso = require(path.join(rootpath, 'lib/calipso'));
+  Query = require("mongoose").Query;
 
 
 /**
@@ -53,10 +54,21 @@ function init(module, app, next) {
     app.use(calipso.lib.express.static(__dirname + '/static'));
 
     // Page
-    module.router.addRoute('GET /sickcase', renderSampleContentPage, {
-      template: 'sickcase',
+
+    module.router.addRoute('GET /sickcase/list', case_list, {end:false,template:'case_list',block:'content.sickcase.case_list'}, this.parallel());
+    module.router.addRoute('GET /sickcase/case_show/:id', case_show, {
+      template: 'case_show',
       block: 'content'
     }, this.parallel());
+    module.router.addRoute('GET /sickcase/edit_view/:id', edit_view, {
+      template: 'edit_view',
+      block: 'content'
+    }, this.parallel());
+    module.router.addRoute('GET /sickcase/create_view', create_view, {
+      template: 'create_view',
+      block: 'content'
+    }, this.parallel());
+    module.router.addRoute('POST /sickcase/create_post', create_post, null, this.parallel());
     module.router.addRoute('POST /sickcase', renderSampleContentPage, {
       template: 'sickcase',
       block: 'content'
@@ -64,7 +76,7 @@ function init(module, app, next) {
 
   }, function done() {
 
-
+	require('./sickcase_model');
     // Any schema configuration goes here
     next();
   });
@@ -227,4 +239,133 @@ function disable() {
 
 function reload() {
   calipso.log("sickcase module reloaded");
+}
+
+
+
+	/**
+	 * 显示病情描述页面
+	 **/
+function show_desc(req, res, template, block, next) {
+       	res.render(ViewTemplatePath+'/show_desc');
+	}
+
+	/**
+	 * 编辑案例显示页面
+	 **/
+function edit_view (req, res, template, block, next) {
+		
+		var sickcase = {};//占位
+		
+		calipso.theme.renderItem(req, res, template, block, {sickcase:sickcase}, next);	
+	}
+
+	/**
+	 *显示案例
+	 * Default mapping to GET '/sickcase/:id'
+	 * For JSON use '/sickcase/:id.json'
+	 **/	
+function case_show (req, res, template, block, next) {	  		  
+			
+		// req.params.id=0;
+
+		var Sickcase = calipso.lib.mongoose.model('Sickcase');			
+		Sickcase.findById(req.moduleParams.id)
+			.run(function(err, sickcase) {
+				if(err) return next(err);
+				calipso.theme.renderItem(req, res, template, block, {sickcase:sickcase}, next);	
+				// res.render(ViewTemplatePath + "/case_show",{sickcase:sickcase});
+		});		
+	}
+
+
+	/**
+	 * 创建案例处理post数据
+	 **/
+function create_post (req, res, template, block, next) {		
+
+		//标准提交方法，对提交的form进行处理，删除空数据，美化日期等处理
+		calipso.form.process(req, function(form) {
+
+		if(form) {
+			var Sickcase = calipso.lib.mongoose.model('Sickcase');	 
+			var sickcase = new Sickcase(form.sickcase);
+			sickcase.dongtai.push({created_by:req.session.user._id ,created_by_login : req.session.user.login , title:'创建了案例' , body:'创建了新案例！'});
+			
+			  sickcase.save(function(err) {
+			   
+				if (err) {
+					console.log(err);
+				  req.flash('error','出现错误，不能创建案例: ' + err);
+				  res.redirect('/sickcase/create_view');
+				  return;
+				}else{
+
+				req.flash('info','您的案例已经创建');
+				res.redirect('/sickcase/case_show/'+sickcase._id);				
+				
+				}
+			  });	 
+		}
+		});
+	}
+
+	/**
+	 * 创建案例显示页面
+	 **/
+function	create_view (req, res, template, block, next) {
+/* 		var Cat = mongoose.model('Cat');
+		Cat.find({})
+			.find(function(err,cats){
+				if(err) return next(err);
+
+				calipso.theme.renderItem(req, res, template, block, {cats:cats}, next);					
+			});
+				 */	
+		var cats = [];
+		calipso.theme.renderItem(req, res, template, block, {cats:cats}, next);	
+	}
+
+	
+	
+
+	/**
+	 * 案例列表,带分页功能
+	 **/
+function	case_list (req, res, template, block, next) {
+
+	var Sickcase = calipso.lib.mongoose.model('Sickcase');	
+	var pager = require(path.join(rootpath, 'utils/pagerZhongyi'));
+	
+	var format = req.moduleParams.format ? req.moduleParams.format : 'html';
+	var from = req.moduleParams.from ? parseInt(req.moduleParams.from) - 1 : 0;
+	var limit = req.moduleParams.limit ? parseInt(req.moduleParams.limit) : 2;
+	var sortBy = req.moduleParams.sortBy;
+
+	var query = new Query();
+
+      // Initialise the block based on our content
+	Sickcase.count(query, function (err, count) {
+		var total = count;
+
+		var qry = Sickcase.find(query).skip(from).limit(limit).sort('created_at','desc');
+
+		qry.find(function (err, sickcases) {
+ 		
+			var pagerHtml=pager.render(from,limit,total,req.url);
+		
+			calipso.theme.renderItem(req,res,template,block,{sickcases:sickcases,pagerHtml:pagerHtml},next);
+
+			if(format === 'json') {
+				res.format = format;
+				res.send(Sickcase.map(function(u) {
+					return u.toObject();
+				}));
+				next();
+			}
+
+		});
+
+
+  });	
 }

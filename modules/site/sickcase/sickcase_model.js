@@ -13,24 +13,33 @@ var Sick_points = new Schema({
   , body      : {type: String, required: false , cn_name:'内容'}
   , date      : {type: String, required: false , cn_name:'日期'}
 });
+mongoose.model('Sick_points', Sick_points);
+
+
 //网站跟踪
 var Web_trace = new Schema({
     title     : {type: String, required: false , cn_name:'标题'}
   , body      : {type: String, required: false , cn_name:'内容'}
   , date      : {type: String, required: false , cn_name:'日期'}
 });
+mongoose.model('Web_trace', Web_trace);
+
 //求诊活动
 var Treatments = new Schema({
     title     : {type: String, required: false , cn_name:'标题'}
   , body      : {type: String, required: false , cn_name:'内容'}
   , date      : {type: String, required: false , cn_name:'日期'}
 });
+mongoose.model('Treatments', Treatments);
+
 //症状变化
 var Symptoms = new Schema({
     title     : {type: String, required: true , cn_name:'标题'}
   , body      : {type: String, required: false , cn_name:'内容'}
   , date      : {type: String, required: false , cn_name:'日期'}
 });
+mongoose.model('Symptoms', Symptoms);
+
 //案例动态
 var Dongtai = new Schema({
     created_by     : {type: String, required: false , cn_name:'创建者id'}
@@ -40,13 +49,15 @@ var Dongtai = new Schema({
   , date      : { type: Date, default: Date.now , cn_name:'日期'}
 });
 
+mongoose.model('Dongtai', Dongtai);
+
 
 var Sickcase = new Schema({
 
 	  // Single default property
 	  name:{type: String, required: true, cn_name:'名称'}
 	  //定义了表间关系，只能使用一层关联。参考http://mongoosejs.com/docs/populate.html
-	  ,created_by:{type: Schema.ObjectId, ref: 'User', required: true, cn_name:'创建者id'} 
+	  ,created_by:{type: Schema.ObjectId, ref: 'User', required: false, cn_name:'创建者id'} 
 	  ,created_by_login:{type: String, required: false, cn_name:'创建者登录名'}
 	  ,sick_intro:{type: String, required: false, cn_name:'病情简介'}
 	  ,sick_cat:{type: String, required: false, cn_name:'所属病种'}

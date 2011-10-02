@@ -58,7 +58,8 @@ function init(module, app, next) {
       module.router.addRoute('GET /zuser/list',listUsers,{end:false,admin:true,template:'list',block:'content.zuser.list'},this.parallel());
       module.router.addRoute('GET /zuser/logout',logoutUser,null,this.parallel());
       module.router.addRoute('GET /zuser/register',registerUserForm,{block:'content'},this.parallel());
-      module.router.addRoute('POST /zuser/register',registerUser,null,this.parallel());
+      module.router.addRoute('POST /zuser/register',registerUser,null,this.parallel());      
+	  module.router.addRoute('GET /zuser/dashboard',dashboard,{template:'dashboard',block:'content'},this.parallel());
       module.router.addRoute('GET /zuser',myProfile,{template:'profile',block:'content'},this.parallel());
       module.router.addRoute('GET /zuser/profile/:username',userProfile,{template:'profile',block:'content'},this.parallel());
       module.router.addRoute('POST /zuser/profile/:username',updateUserProfile,{block:'content'},this.parallel());
@@ -1095,4 +1096,11 @@ function signupUser(req, res, template, block, next) {
 
   });
 
+}
+
+
+
+function dashboard(req, res, template, block, next){
+	var mysickcases=[];
+    calipso.theme.renderItem(req, res, template, block, {mysickcases:mysickcases}, next);
 }

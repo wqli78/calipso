@@ -4,7 +4,7 @@
  * Licensed under the MIT license.
  */
 
-// Takes an ISO time and returns a string representing how
+// 对此函数进行中文化改造
 // long ago the date represents.
 var rootpath = process.cwd() + '/',
   path = require('path'),
@@ -22,15 +22,15 @@ exports = module.exports = {
       return;
 
     return day_diff == 0 && (
-        diff < 60 && "just now" ||
-        diff < 120 && "1 minute ago" ||
-        diff < 3600 && Math.floor( diff / 60 ) + " minutes ago" ||
-        diff < 7200 && "1 hour ago" ||
-        diff < 86400 && Math.floor( diff / 3600 ) + " hours ago"
+        diff < 60 && "刚刚发布" ||
+        diff < 120 && "1分钟前" ||
+        diff < 3600 && Math.floor( diff / 60 ) + " 分钟前" ||
+        diff < 7200 && "1小时前" ||
+        diff < 86400 && Math.floor( diff / 3600 ) + " 小时前"
       ) ||
-      day_diff == 1 && "Yesterday" ||
-      day_diff < 7 && day_diff + " days ago" ||
-      day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago"  ||
+      day_diff == 1 && "昨天" ||
+      day_diff < 7 && day_diff + " 天前" ||
+      day_diff < 31 && Math.ceil( day_diff / 7 ) + " 星期以前"  ||
       day_diff >=31 && calipsoDate.formatDate('D, d M yy', date);
   },
   // Splits the date into 7 'hot' categories based on recency

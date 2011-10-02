@@ -1,7 +1,18 @@
 
 <div class="pagehead">
 
-<%- partial('../_tabs_pjax') %>
+  <h1><a href="https://github.com/languages/ActionScript">脊髓损伤</a> <em>最新提交的案例</em></h1>
+  
+  
+  <ul class="tabs pjax">
+  <li><a href="/app/act/explore" class="selected" highlight="explore_main">概况</a></li>
+  <li><a href="/sickcases/act/case_list" highlight="explore_repos">案例库</a></li>
+  <li><a href="/cats/act/cats_list" highlight="explore_languages">病种</a></li>
+  <li><a href="/doctors/act/doctors_list" highlight="explore_languages">医生</a></li>
+  <li><a href="/app/act/search" highlight="code_search">搜索</a></li>
+  
+</ul>
+
 <div class="pjax">
   
   <div class="subnav-bar">
@@ -32,14 +43,14 @@
     <img src="/list_files/138b77949f40a2503a39559b51cd9d13.png" alt="" height="36" width="36">
   </td>
   <td class="title">
-    <a href="/sickcases/<%= sickcase.id %>/case_show"><%= sickcase.name %></a>
+    <a href="/sickcases/case_show/<%= sickcase.id %>"><%= sickcase.name %></a>
   </td>
   <td class="owner">
-    <a href="https://github.com/codeengine"><%= sickcase.created_by_login %></a>
+    <a href="/zuser/profile/<%= sickcase.created_by_login %>"><%= sickcase.created_by_login %></a>
   </td>
   <td class="date">
     
-     <%= sickcase.created_at %>
+     <%= prettyDate(sickcase.created_at) %>
     
   </td>
   <td rowspan="2" class="graph participation-graph">
@@ -255,8 +266,10 @@
 
       
     </tbody></table>
-    <div class="pagination"><span class="disabled">« Previous</span> <span class="current">1</span> <a href="https://github.com/languages/ActionScript/created?page=2" rel="next">2</a> <a href="https://github.com/languages/ActionScript/created?page=3">3</a> <a href="https://github.com/languages/ActionScript/created?page=4">4</a> <a href="https://github.com/languages/ActionScript/created?page=5">5</a> <a href="https://github.com/languages/ActionScript/created?page=6">6</a> <a href="https://github.com/languages/ActionScript/created?page=7">7</a> <a href="https://github.com/languages/ActionScript/created?page=8">8</a> <a href="https://github.com/languages/ActionScript/created?page=9">9</a> <span class="gap">…</span> <a href="https://github.com/languages/ActionScript/created?page=362">362</a> <a href="https://github.com/languages/ActionScript/created?page=363">363</a> <a href="https://github.com/languages/ActionScript/created?page=2" hotkey="l" rel="next">Next »</a></div>
-  </div>
+
+<!-- 分页 -->
+	<%- pagerHtml%>
+
 </div>
 
       

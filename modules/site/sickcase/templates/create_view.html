@@ -12,9 +12,9 @@
 <div class="columns accountcols">
   <div class="main">
     
-    <form action="/sickcases/act/create_post" method="post">
-	<input name="sickcase[created_by]" value="<%= guser()._id%>" type="hidden">
-	<input name="sickcase[created_by_login]" value="<%= guser().login%>" type="hidden">
+    <form action="/sickcase/create_post" method="post">
+	<input name="sickcase[created_by]" value="<%= user.id%>" type="hidden">
+	<input name="sickcase[created_by_login]" value="<%= user.username%>" type="hidden">
 
       <dl class="form">
 		<dt><label error="false" for="repository_name" style="width:39em">案例名称:</label></dt>

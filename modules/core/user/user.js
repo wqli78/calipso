@@ -60,6 +60,7 @@ function init(module, app, next) {
       module.router.addRoute('GET /user/register',registerUserForm,{block:'content'},this.parallel());
       module.router.addRoute('POST /user/register',registerUser,null,this.parallel());
       module.router.addRoute('GET /user',myProfile,{template:'profile',block:'content'},this.parallel());
+
       module.router.addRoute('GET /user/profile/:username',userProfile,{template:'profile',block:'content'},this.parallel());
       module.router.addRoute('POST /user/profile/:username',updateUserProfile,{block:'content'},this.parallel());
       module.router.addRoute('GET /user/profile/:username/edit',updateUserForm,{block:'content'},this.parallel());

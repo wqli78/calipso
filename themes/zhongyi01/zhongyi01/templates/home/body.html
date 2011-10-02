@@ -51,7 +51,10 @@
 </div><!-- /.definitions -->
 
 <div class="signup-entice">
-  <a href="/user/act/signup" class="signup-button"><strong>免费注册</strong> 病友联合起来，共同 <em>战胜疾病！</em></a>
+  <%if (user.anonymous) { %>
+  <a href="/zuser/signup" class="signup-button"><strong>免费注册</strong> 病友联合起来，共同 <em>战胜疾病！</em></a>
+  <% } %>
+  
   <p>更大可能治愈疾病，分享治疗信息, 得到病友关注, 找到好医生, 获得慈善援助以及更多…</p>
 </div>
 
